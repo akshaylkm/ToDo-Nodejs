@@ -24,7 +24,7 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
    let item = req.body.todoitem;
-   items.push(item)
+   items.unshift(item)
    res.redirect("/") 
 })
 
