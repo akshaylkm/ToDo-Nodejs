@@ -17,12 +17,16 @@
         <input type="text" name="todoitem" placeholder="New Item" required autocomplete="off">
         <button type="submit">+</button>
         </form>
-        <%for (let i=0;i<newListItems.length;i++){%>
+
+        <%newListItems.forEach((item)=>{%>
+            <form action="/delete" method="post">
             <div class="item">
-                <input type="checkbox">
-                <p><%= newListItems[i] %></p>
+                <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">
+                <p><%= item.name %></p>
             </div>
-        <%}%>
+        </form>
+        <%})%>
+       
 </div>
   
 
